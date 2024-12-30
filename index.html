@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محفظتي الشخصية</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .about, .projects, .contact {
+      margin: 20px 0;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>مرحباً في محفظتي الشخصية</h1>
+    <p>أعرض مشاريعي ومهاراتي هنا</p>
+  </header>
+
+  <nav>
+    <a href="#about">عنّي</a>
+    <a href="#projects">المشاريع</a>
+    <a href="#contact">اتصل بي</a>
+  </nav>
+
+  <div class="container">
+    <section id="about" class="about">
+      <h2>عنّي</h2>
+      <p>أنا مطور ويب متخصص في HTML, CSS, JavaScript و React. أتمتع بخبرة في تطوير مواقع الويب التفاعلية وتهيئة محركات البحث (SEO).</p>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>المشاريع</h2>
+      <div class="project-card">
+        <h3>مشروع 1</h3>
+        <p>وصف المشروع 1 هنا</p>
+      </div>
+      <div class="project-card">
+        <h3>مشروع 2</h3>
+        <p>وصف المشروع 2 هنا</p>
+      </div>
+      <div class="project-card">
+        <h3>مشروع 3</h3>
+        <p>وصف المشروع 3 هنا</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>اتصل بي</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="اسمك" required><br>
+        <input type="email" id="email" placeholder="بريدك الإلكتروني" required><br>
+        <textarea id="message" placeholder="رسالتك" required></textarea><br>
+        <button type="submit">إرسال</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2024 محفظتي الشخصية. كل الحقوق محفوظة.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('تم إرسال رسالتك بنجاح!');
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+</body>
+</html>
