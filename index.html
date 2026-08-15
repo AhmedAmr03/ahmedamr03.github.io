@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Amr Portfolio</title>
+
+  <!-- Tailwind CSS Local -->
+  <script src="js/tailwind.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0f1418',
+            foreground: '#f0f2f5',
+            card: '#141a1f',
+            primary: '#20b2a6',
+            'primary-foreground': '#ffffff',
+            secondary: '#1f2830',
+            'secondary-foreground': '#20b2a6',
+            muted: '#252e37',
+            'muted-foreground': '#7a8491',
+            border: '#242b32',
+            highlight: '#f5a623',
+            surface: '#1a2329',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+
+</head>
+
+<body class="bg-[#0f1418] text-[#f0f2f5] min-h-screen overflow-x-hidden">
+
+  <!-- Header / Navbar -->
+  <header id="navbar-header" class="fixed top-0 left-0 right-0 py-5 transition-all duration-500 z-50 bg-transparent">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight hover:text-primary transition-colors">
+        Ahmed<span class="text-primary">Amr</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-1">
+        <div class="glass rounded-full px-2 py-1 flex items-center gap-1">
+          <a href="#about"
+            class="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors">About</a>
+          <a href="#education"
+            class="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors">Education</a>
+          <a href="#certificates"
+            class="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors">Certificates</a>
+          <a href="#awards"
+            class="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors">Awards</a>
+          <a href="#contact"
+            class="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <!-- CTA Button (Desktop) -->
+      <div class="hidden md:block">
+        <a href="#contact"
+          class="relative overflow-hidden rounded-full font-medium inline-block px-6 py-3 text-base bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 transition-all">
+          Contact Me
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-foreground cursor-pointer focus:outline-none">
+        <!-- Menu Icon -->
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- X Icon -->
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu"
+      class="hidden md:hidden glass-strong animate-fade-in flex-col gap-4 container mx-auto px-6 py-6 mt-2 rounded-2xl">
+      <a href="#about"
+        class="text-lg text-muted-foreground hover:text-foreground py-2 border-b border-border/40">About</a>
+      <a href="#education"
+        class="text-lg text-muted-foreground hover:text-foreground py-2 border-b border-border/40">Education</a>
+      <a href="#certificates"
+        class="text-lg text-muted-foreground hover:text-foreground py-2 border-b border-border/40">Certificates</a>
+      <a href="#awards"
+        class="text-lg text-muted-foreground hover:text-foreground py-2 border-b border-border/40">Awards</a>
+      <a href="#contact" class="text-lg text-muted-foreground hover:text-foreground py-2">Contact</a>
+      <a href="#contact"
+        class="w-full text-center py-3 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary/90 shadow-lg shadow-primary/25 transition-all">
+        Contact Me
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="images/hero-bg.jpg" alt="Hero image" class="w-full h-full object-cover opacity-40" />
+        <div class="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background"></div>
+      </div>
+
+      <!-- Dynamic Green Dots Container -->
+      <div id="green-dots-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+
+      <!-- Content -->
+      <div class="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Left Column - Text Content -->
+          <div class="space-y-8">
+            <div class="animate-fade-in">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+                <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                Law Graduate
+              </span>
+            </div>
+
+            <!-- Headline -->
+            <div class="space-y-4">
+              <span class="font-serif italic font-normal text-white text-2xl">hi, I am</span>
+              <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Ahmed <span class="text-primary glow-text">Amr</span>
+              </h1>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+              <a href="#contact"
+                class="relative overflow-hidden rounded-full font-medium inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 transition-all">
+                Contact Me
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="cv/Ahmed_Amr_CV.pdf"
+                class="relative inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium rounded-full overflow-visible animated-border text-foreground border border-border group"
+                download>
+                <!-- Animated SVG Border -->
+                <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" viewBox="0 0 200 60"
+                  preserveAspectRatio="none" style="overflow: visible;">
+                  <path
+                    d="M 30,1 A 29,29 0 0 0 1,30 L 1,30 A 29,29 0 0 0 30,59 L 170,59 A 29,29 0 0 0 199,30 L 199,30 A 29,29 0 0 0 170,1 Z"
+                    fill="none" stroke="#20b2a6" stroke-width="2" stroke-dasharray="400 550" stroke-dashoffset="400"
+                    stroke-linecap="round" stroke-linejoin="round" class="animated-border-path"></path>
+                </svg>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-5 h-5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Download CV
+                </span>
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <span class="text-sm text-muted-foreground">Contact me: </span>
+              <a href="https://www.linkedin.com/in/ahmedamr03/"
+                class="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                target="_blank" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="mailto:contact@ahmedamr.pro"
+                class="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+              <a href="tel:+201080170482"
+                class="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                aria-label="Phone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column - Profile Image -->
+          <div class="relative animate-fade-in animation-delay-300">
+            <div class="relative max-w-md mx-auto">
+              <div
+                class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse">
+              </div>
+              <div class="relative glass rounded-3xl p-2 glow-border">
+                <img src="images/profile-photo.png" alt="Ahmed Amr"
+                  class="w-full aspect-[4/5] object-cover rounded-2xl" />
+
+                <!-- Floating Badge Bottom Right -->
+                <div class="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium">Available for work</span>
+                  </div>
+                </div>
+
+                <!-- Floating Badge Top Left -->
+                <div class="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div class="text-2xl font-bold text-primary">GPA: 3.648</div>
+                  <div class="text-xs text-muted-foreground">Excellent with Honors</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Skills Marquee Tape -->
+        <div class="mt-20 animate-fade-in animation-delay-600">
+          <p class="text-sm text-muted-foreground mb-6 text-center">My Skills is:</p>
+          <div class="relative overflow-hidden">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10">
+            </div>
+
+            <div class="flex animate-marquee">
+              <!-- Double Skills list to ensure seamless looping -->
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Data
+                  Analysis</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">AI
+                  Tools</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">ICDL
+                  Base</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Web
+                  Development(HTML & CSS)</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Time
+                  Management</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Problem
+                  Solving</span></div>
+
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Data
+                  Analysis</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">AI
+                  Tools</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">ICDL
+                  Base</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Web
+                  Development(HTML & CSS)</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Time
+                  Management</span></div>
+              <div class="flex-shrink-0 px-8 py-4"><span
+                  class="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">Problem
+                  Solving</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Scroll Arrow -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+        <a href="#about"
+          class="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
+          <span class="text-xs uppercase tracking-wider">Scroll</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="w-6 h-6 animate-bounce">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section (Centered & Modified) -->
+    <section id="about" class="py-32 relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+
+          <div class="animate-fade-in">
+            <span class="text-secondary-foreground text-sm font-medium tracking-wider uppercase">About Me</span>
+          </div>
+
+          <div
+            class="glass rounded-3xl p-8 md:p-12 glow-border animate-fade-in animation-delay-300 space-y-6 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl leading-relaxed text-foreground/90 text-center">
+              My background in law and active participation in competitions and initiatives, including chess awards and
+              community projects, further strengthen my critical thinking, strategic planning, and commitment to
+              excellence.
+            </p>
+            <p class="text-lg md:text-xl leading-relaxed text-foreground/90 text-center">
+              I have enhanced my technical skills with multiple certifications and projects, including AI tools, Web
+              Development (HTML & CSS), Business English, Digital Marketing fundamentals, and structured training from
+              recognized institutions such as ALX, Creativa and ITIDA.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-32 relative overflow-hidden">
+      <!-- Glow Background circle -->
+      <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2"></div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header (Centered) -->
+        <div class="text-center mx-auto max-w-3xl mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+            Education
+          </h2>
+        </div>
+
+        <!-- Timeline Grid -->
+        <div class="relative">
+          <!-- Timeline line -->
+          <div
+            class="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2">
+          </div>
+
+          <!-- Timeline items -->
+          <div class="space-y-12">
+
+            <!-- Education item 1 -->
+            <div class="relative grid md:grid-cols-2 gap-8 animate-fade-in" style="animation-delay: 150ms;">
+              <!-- Timeline Dot -->
+              <div
+                class="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
+                <span class="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></span>
+              </div>
+
+              <!-- Content Block (Left alignment) -->
+              <div class="pl-8 md:pl-0 md:pr-16 md:text-right">
+                <div
+                  class="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500">
+                  <span class="text-sm text-primary font-medium">2025 — 2026</span>
+                  <h3 class="text-xl font-semibold mt-2">Postgraduate Diploma in Public Law</h3>
+                  <p class="text-muted-foreground">Assiut University</p>
+                  <p class="text-sm text-muted-foreground mt-4">
+                    <!-- Wait the Grade -->
+                  </p>
+                  <!-- <div class="flex flex-wrap gap-2 mt-4 md:justify-end">
+                    <span class="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">GPA: 3.648</span>
+                    <span class="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">Excellent with
+                      Honors</span>
+                    <span class="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">Legal Analysis</span>
+                    <span class="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">Critical
+                      Thinking</span>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Education item 2 -->
+            <div class="relative grid md:grid-cols-2 gap-8 animate-fade-in" style="animation-delay: 300ms;">
+              <!-- Timeline Dot -->
+              <div
+                class="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
+              </div>
+
+              <!-- Content Block (Right alignment) -->
+              <div class="pl-8 md:pl-0 md:col-start-2 md:pl-16">
+                <div
+                  class="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500">
+                  <span class="text-sm text-primary font-medium">2021 — 2025</span>
+                  <h3 class="text-xl font-semibold mt-2">Bachelor of Laws (LL.B)</h3>
+                  <p class="text-muted-foreground">Sohag University</p>
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <div class="flex flex-wrap gap-2 mt-4 md:justify-end">
+                      <span class="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">GPA: 3.648</span>
+                      <span class="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">Excellent with
+                        Honors</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-32 relative overflow-hidden">
+      <!-- Bg glows -->
+      <div class="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl"></div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mx-auto max-w-3xl mb-12">
+          <span
+            class="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">Professional
+            Development</span>
+          <h2
+            class="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+            Certifications &
+            <span class="font-serif italic font-normal text-white"> Training</span>
+          </h2>
+          <p class="text-muted-foreground animate-fade-in animation-delay-200">
+            A selection of my technical certifications, courses, and business program completions.
+          </p>
+        </div>
+
+        <!-- ===== TAB SWITCHER ===== -->
+        <div class="flex justify-center mb-10">
+          <div class="inline-flex glass rounded-2xl p-1.5 border border-primary/20 gap-1">
+            <button id="tab-technical" onclick="switchCertTab('technical')"
+              class="cert-tab-btn relative px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 focus:outline-none">
+              <span class="relative z-10 flex items-center gap-2">
+                <!-- Code icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                Technical Skills
+              </span>
+            </button>
+            <button id="tab-soft" onclick="switchCertTab('soft')"
+              class="cert-tab-btn relative px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 focus:outline-none">
+              <span class="relative z-10 flex items-center gap-2">
+                <!-- Users icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Soft Skills
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== TECHNICAL SKILLS PANEL ===== -->
+        <div id="panel-technical" class="cert-panel">
+          <div class="relative">
+            <button onclick="slidePanel('technical', -1)" aria-label="Previous"
+              class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button onclick="slidePanel('technical', 1)" aria-label="Next"
+              class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <div class="overflow-hidden rounded-2xl">
+              <div id="track-technical" class="flex gap-6 transition-transform duration-500 ease-in-out"
+                style="will-change:transform;">
+
+                <!-- T-Cert 1: AI Tools -->
+                <div
+                  class="cert-slide glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 group flex flex-col justify-between flex-shrink-0"
+                  style="width:calc(33.333% - 1rem);">
+                  <div>
+                    <div
+                      class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
+                      <img src="certificates/AI Career Essentials.png" alt="AI Career Essentials (AICE)"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+                      <div
+                        class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                          stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
+                            class="text-primary">certificates/AI Career Essentials.png</code></span>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-2"
+                      style="background:rgba(32,178,166,0.12);color:#20b2a6;">Technical</span>
+                    <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">AI Career Essentials
+                    </h3>
+                    <p class="text-sm text-primary font-medium mt-1">Creativa</p>
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-3 leading-relaxed">Practical application of Generative AI
+                    tools (ChatGPT, Midjourney, code pilots) for enhancing productivity, drafting papers, and
+                    accelerating development workflows.</p>
+                </div>
+
+                <!-- T-Cert 2: Web Dev -->
+                <div
+                  class="cert-slide glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 group flex flex-col justify-between flex-shrink-0"
+                  style="width:calc(33.333% - 1rem);">
+                  <div>
+                    <div
+                      class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
+                      <img src="certificates/THE WEB DEVELOPMENT.PNG" alt="Web Development Certificate"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+                      <div
+                        class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                          stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
+                            class="text-primary">certificates/The Web Development.png</code></span>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-2"
+                      style="background:rgba(32,178,166,0.12);color:#20b2a6;">Technical</span>
+                    <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Web Development (HTML &
+                      CSS)</h3>
+                    <p class="text-sm text-primary font-medium mt-1">ITIDA</p>
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-3 leading-relaxed">Comprehensive study of web creation
+                    principles, custom styling systems, semantic HTML markup, CSS, responsive mobile UI layouts, and
+                    browser testing.</p>
+                </div>
+
+                <!-- T-Cert 3: Data Analysis -->
+                <div
+                  class="cert-slide glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 group flex flex-col justify-between flex-shrink-0"
+                  style="width:calc(33.333% - 1rem);">
+                  <div>
+                    <div
+                      class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
+                      <img src="certificates/Data Analysis.PNG" alt="Data Analysis"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+                      <div
+                        class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                          stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
+                            class="text-primary">certificates/Data Analysis.png</code></span>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-2"
+                      style="background:rgba(32,178,166,0.12);color:#20b2a6;">Technical</span>
+                    <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Data Analysis
+                    </h3>
+                    <p class="text-sm text-primary font-medium mt-1">Creativa</p>
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-3 leading-relaxed">Excel and Data processing and
+                    visualization.
+                  </p>
+                </div>
+                <!-- T-Cert 3: ICDL -->
+                <div
+                  class="cert-slide glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 group flex flex-col justify-between flex-shrink-0"
+                  style="width:calc(33.333% - 1rem);">
+                  <div>
+                    <div
+                      class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
+                      <img src="certificates/ICDL Base.PNG" alt="ICDL Certificate"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+                      <div
+                        class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                          stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
+                            class="text-primary">certificates/ICDL Base.png</code></span>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-2"
+                      style="background:rgba(32,178,166,0.12);color:#20b2a6;">Technical</span>
+                    <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">ICDL Base
+                    </h3>
+                    <p class="text-sm text-primary font-medium mt-1">Edraak</p>
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-3 leading-relaxed">Standard qualification representing
+                    computer competency in computer essentials, online essentials, word processing, and spreadsheets.
+                  </p>
+                </div>
+              </div><!-- end track-technical -->
+            </div>
+          </div>
+          <div id="dots-technical" class="flex justify-center gap-2 mt-8"></div>
+        </div><!-- end panel-technical -->
+
+        <!-- ===== SOFT SKILLS PANEL ===== -->
+        <div id="panel-soft" class="cert-panel hidden">
+          <div class="relative">
+            <button onclick="slidePanel('soft', -1)" aria-label="Previous"
+              class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button onclick="slidePanel('soft', 1)" aria-label="Next"
+              class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <div class="overflow-hidden rounded-2xl">
+              <div id="track-soft" class="flex gap-6 transition-transform duration-500 ease-in-out"
+                style="will-change: transform;">
+                <!-- S-Cert 1: Time Management -->
+                <div
+                  class="cert-slide glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 group flex flex-col justify-between flex-shrink-0"
+                  style="width:calc(33.333% - 1rem);">
+                  <div>
+                    <div
+                      class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
+                      <img src="certificates/Time Management.PNG" alt="Time Management"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+                      <div
+                        class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                          stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
+                            class="text-primary">certificates/Time Management.png</code></span>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-2"
+                      style="background:rgba(32,178,166,0.12);color:#20b2a6;">Soft Skills</span>
+                    <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Time Management</h3>
+                    <p class="text-sm text-primary font-medium mt-1">Yanfaa</p>
+                  </div>
+                </div>
+
+                <!-- S-Cert 2: Business English -->
+                <div
+                  class="cert-slide glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 group flex flex-col justify-between flex-shrink-0"
+                  style="width:calc(33.333% - 1rem);">
+                  <div>
+                    <div
+                      class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
+                      <img src="certificates/Business English For Freelancing.PNG"
+                        alt="Business English For Freelancing"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+                      <div
+                        class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                          stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
+                            class="text-primary">certificates/Business English For Freelancing.png</code></span>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-2"
+                      style="background:rgba(32,178,166,0.12);color:#20b2a6;">Soft Skills</span>
+                    <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Business English For
+                      Freelancing</h3>
+                    <p class="text-sm text-primary font-medium mt-1">Creativa</p>
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-3 leading-relaxed">Training in professional email writing,
+                    stakeholder reporting, persuasive presentations, and international business terminology.</p>
+                </div>
+              </div>
+
+            </div><!-- end track-soft -->
+          </div>
+        </div>
+        <div id="dots-soft" class="flex justify-center gap-2 mt-8"></div>
+      </div><!-- end panel-soft -->
+
+      <!-- Tab + Slider CSS -->
+      <style>
+        .cert-tab-btn {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cert-tab-btn.active {
+          background: rgba(32, 178, 166, 0.15);
+          color: #20b2a6;
+          box-shadow: 0 0 18px rgba(32, 178, 166, 0.18);
+        }
+
+        .cert-panel {
+          animation: fadeSlideIn 0.35s ease;
+        }
+
+        @keyframes fadeSlideIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .cert-slide {
+            width: 100% !important;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .cert-slide {
+            width: calc(50% - 0.75rem) !important;
+          }
+        }
+      </style>
+
+      <!-- Tab + Slider JS -->
+      <script>
+        var certSliders = {};
+
+        function createSlider(name) {
+          var track = document.getElementById('track-' + name);
+          var dotsEl = document.getElementById('dots-' + name);
+          var panel = document.getElementById('panel-' + name);
+          var arrows = panel ? Array.from(panel.querySelectorAll('button[aria-label="Previous"], button[aria-label="Next"]')) : [];
+          var idx = 0;
+          var startX = 0;
+          var dragging = false;
+
+          function perView() {
+            if (window.innerWidth < 769) return 1;
+            if (window.innerWidth < 1024) return 2;
+            return 3;
+          }
+          function slides() { return track ? Array.from(track.querySelectorAll('.cert-slide')) : []; }
+          function maxIdx() { return Math.max(0, slides().length - perView()); }
+
+          function updateArrows() {
+            var hide = maxIdx() === 0;
+            arrows.forEach(function (btn) {
+              btn.style.display = hide ? 'none' : 'flex';
+            });
+          }
+
+          function styleBtn(dot, active) {
+            dot.style.cssText = 'display:inline-block;border:none;padding:0;margin:0;cursor:pointer;border-radius:999px;transition:all 0.3s;'
+              + (active ? 'width:24px;height:8px;background:#20b2a6;' : 'width:8px;height:8px;background:rgba(122,132,145,0.4);');
+          }
+
+          function buildDots() {
+            if (!dotsEl) return;
+            dotsEl.innerHTML = '';
+            if (maxIdx() === 0) return; // no dots needed when all slides visible
+            for (var i = 0; i <= maxIdx(); i++) {
+              var d = document.createElement('button');
+              d.setAttribute('aria-label', 'Slide ' + (i + 1));
+              styleBtn(d, i === idx);
+              (function (i2) { d.addEventListener('click', function () { goTo(i2); }); })(i);
+              dotsEl.appendChild(d);
+            }
+          }
+
+          function updateDots() {
+            if (!dotsEl) return;
+            Array.from(dotsEl.children).forEach(function (d, i) { styleBtn(d, i === idx); });
+          }
+
+          function goTo(i) {
+            idx = Math.max(0, Math.min(i, maxIdx()));
+            var sl = slides();
+            var w = sl.length > 0 ? sl[0].offsetWidth + 24 : 0;
+            track.style.transform = 'translateX(-' + (idx * w) + 'px)';
+            updateDots();
+          }
+
+          track.addEventListener('mousedown', function (e) { dragging = true; startX = e.clientX; track.style.transition = 'none'; });
+          track.addEventListener('mouseup', function (e) {
+            if (!dragging) return; dragging = false; track.style.transition = '';
+            var d = e.clientX - startX;
+            Math.abs(d) > 50 ? goTo(idx + (d < 0 ? 1 : -1)) : goTo(idx);
+          });
+          track.addEventListener('mouseleave', function () { if (dragging) { dragging = false; track.style.transition = ''; goTo(idx); } });
+          track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; track.style.transition = 'none'; }, { passive: true });
+          track.addEventListener('touchend', function (e) {
+            track.style.transition = '';
+            var d = e.changedTouches[0].clientX - startX;
+            Math.abs(d) > 50 ? goTo(idx + (d < 0 ? 1 : -1)) : goTo(idx);
+          });
+          window.addEventListener('resize', function () { updateArrows(); buildDots(); goTo(Math.min(idx, maxIdx())); });
+
+          requestAnimationFrame(function () { updateArrows(); buildDots(); goTo(0); });
+          return { slide: function (dir) { goTo(idx + dir); } };
+        }
+
+        function slidePanel(name, dir) { if (certSliders[name]) certSliders[name].slide(dir); }
+
+        var activeTab = 'technical';
+        function switchCertTab(name) {
+          document.querySelectorAll('.cert-panel').forEach(function (p) { p.classList.add('hidden'); });
+          document.querySelectorAll('.cert-tab-btn').forEach(function (b) { b.classList.remove('active'); });
+          document.getElementById('panel-' + name).classList.remove('hidden');
+          document.getElementById('tab-' + name).classList.add('active');
+          activeTab = name;
+          if (!certSliders[name]) { certSliders[name] = createSlider(name); }
+        }
+
+        // Init
+        switchCertTab('technical');
+      </script>
+
+      </div>
+    </section>
+
+    <!-- Awards Section (Grid with individual Certificate Images) -->
+
+    <section id="awards" class="py-32 relative overflow-hidden">
+      <!-- Bg glows -->
+      <div class="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl"></div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mx-auto max-w-3xl mb-16">
+          <span class="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">Honors &
+            Competitions</span>
+          <h2
+            class="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+            Awards &
+            <span class="font-serif italic font-normal text-white"> Achievements</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Award Card 1 -->
+          <div
+            class="glass p-6 rounded-3xl border border-primary/20 hover:border-primary/50 transition-all duration-300 animate-fade-in group flex flex-col justify-between"
+            style="animation-delay: 150ms;">
+            <div>
+              <!-- Chess Certificate Image -->
+              <div
+                class="relative overflow-hidden aspect-video mb-6 rounded-2xl border border-border/50 bg-card flex items-center justify-center">
+                <img src="awards/1st place in Chess.jpg" alt="1st place in Chess at Sohag University"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
+                <!-- Fallback placeholder if image doesn't exist -->
+                <div class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                    stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-10 h-10 text-primary">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                  <span class="text-[10px] text-muted-foreground font-medium">Place Chess Certificate at:<br><code
+                      class="text-primary">awards/1nd place in Chess</code></span>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-semibold text-primary">First Place University Chess Championship</h3>
+              <p class="text-sm text-muted-foreground mt-1">Sohag University</p>
+            </div>
+            <p class="text-sm text-muted-foreground/80 mt-4 leading-relaxed">
+              Won first place in the Faculty of Law chess tournament at Sohag University.
+            </p>
+          </div>
+
+          <!-- Award Card 2 -->
+          <div
+            class="glass p-6 rounded-3xl border border-primary/20 hover:border-primary/50 transition-all duration-300 animate-fade-in group flex flex-col justify-between"
+            style="animation-delay: 300ms;">
+            <div>
+              <!-- Community Project Certificate Image -->
+              <div
+                class="relative overflow-hidden aspect-video mb-6 rounded-2xl border border-border/50 bg-card flex items-center justify-center">
+                <img src="awards/2nd place in Chess.jpg" alt="2nd place in Chess"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
+                <!-- Fallback placeholder if image doesn't exist -->
+                <div class="hidden absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                    stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-10 h-10 text-primary">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <span class="text-[10px] text-muted-foreground font-medium">Place Chess Certificate at:<br><code
+                      class="text-primary">awards/2nd place in Chess</code></span>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-semibold text-primary">2nd Place in Chess</h3>
+              <p class="text-sm text-muted-foreground mt-1">South Valley University</p>
+            </div>
+            <p class="text-sm text-muted-foreground/80 mt-4 leading-relaxed">
+              Achieved second place in a chess tournament between five universities during the Leadership Preparation
+              Institute Camp at South Valley University.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative overflow-hidden">
+      <!-- Glow background elements -->
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">Get In
+            Touch</span>
+          <h2
+            class="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+            Let's do
+            <span class="font-serif italic font-normal text-white"> something great.</span>
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <!-- Contact Form Panel -->
+          <div class="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+            <form id="contact-form" class="space-y-6">
+
+              <div>
+                <label htmlFor="name" class="block text-sm font-medium mb-2">Name</label>
+                <input id="name" type="text" required placeholder="Your name..."
+                  class="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground" />
+              </div>
+
+              <div>
+                <label htmlFor="email" class="block text-sm font-medium mb-2">Email</label>
+                <input id="email" type="email" required placeholder="your@email.com"
+                  class="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground" />
+              </div>
+
+              <div>
+                <label htmlFor="message" class="block text-sm font-medium mb-2">Message</label>
+                <textarea id="message" rows="5" required placeholder="Your message..."
+                  class="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none text-foreground"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button id="submit-btn" type="submit"
+                class="w-full relative overflow-hidden rounded-full font-medium inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
+                <span id="submit-btn-text" class="flex items-center justify-center gap-2">
+                  Send Message
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-5 h-5">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </span>
+                <span id="submit-btn-loader" class="hidden">Sending...</span>
+              </button>
+
+              <!-- Submission Status Indicator -->
+              <div id="submit-status" class="hidden flex items-center gap-3 p-4 rounded-xl">
+                <!-- Check Icon -->
+                <svg id="status-icon-success" class="w-5 h-5 flex-shrink-0 hidden" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <!-- Alert Icon -->
+                <svg id="status-icon-error" class="w-5 h-5 flex-shrink-0 hidden" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <p id="status-text" class="text-sm"></p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Contact Information & Status -->
+          <div class="space-y-6 animate-fade-in animation-delay-400">
+
+            <div class="glass rounded-3xl p-8">
+              <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+              <div class="space-y-4">
+
+                <!-- Linkedin Link -->
+                <a href="https://www.linkedin.com/in/ahmedamr03/" target="_blank"
+                  class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground">Linkedin</div>
+                    <div class="font-medium">ahmedamr03</div>
+                  </div>
+                </a>
+
+                <!-- Email Link -->
+                <a href="mailto:contact@ahmedamr.pro"
+                  class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground">Email</div>
+                    <div class="font-medium">contact@ahmedamr.pro</div>
+                  </div>
+                </a>
+
+                <!-- Phone Link -->
+                <a href="tel:+201080170482"
+                  class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground">Phone</div>
+                    <div class="font-medium">+20 10 8017 0482</div>
+                  </div>
+                </a>
+
+                <!-- Location Card -->
+                <div class="flex items-center gap-4 p-4 rounded-xl group">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="#20b2a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground">Location</div>
+                    <div class="font-medium">Egypt, Qena</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Availability Card -->
+            <div class="glass rounded-3xl p-8 border border-primary/30">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="font-medium">Currently Available</span>
+              </div>
+              <p class="text-muted-foreground text-sm">
+                I'm currently open to new opportunities and projects.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="py-12 border-t border-border">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+        <!-- Logo & Copyright -->
+        <div class="text-center md:text-left">
+          <a href="#" class="text-xl font-bold tracking-tight hover:text-primary transition-colors">
+            Ahmed<span class="text-primary">Amr</span>
+          </a>
+          <p class="text-sm text-muted-foreground mt-2">
+            &copy; <span id="footer-year"></span> Ahmed Amr. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Links Navigation -->
+        <nav class="flex flex-wrap justify-center gap-6">
+          <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+          <a href="#education"
+            class="text-sm text-muted-foreground hover:text-foreground transition-colors">Education</a>
+          <a href="#certificates"
+            class="text-sm text-muted-foreground hover:text-foreground transition-colors">Certificates</a>
+          <a href="#awards" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Awards</a>
+          <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+        </nav>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/ahmedamr03/" target="_blank" aria-label="Linkedin"
+            class="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="mailto:contact@ahmedamr.pro" aria-label="Mail"
+            class="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+          <a href="tel:+201080170482" aria-label="Phone"
+            class="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="image-lightbox"
+    class="fixed inset-0 bg-black/90 flex items-center justify-center cursor-zoom-out transition-opacity duration-300 opacity-0 hidden"
+    style="z-index: 9999;">
+    <button id="lightbox-close"
+      class="absolute top-5 right-5 text-white/80 hover:text-white p-2 text-4xl focus:outline-none cursor-pointer">&times;</button>
+    <img id="lightbox-img"
+      class="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl transition-transform duration-300 scale-95"
+      src="" alt="Large view" />
+  </div>
+
+  <!-- Script setup -->
+  <script src="js/main.js"></script>
+  <script>
+    // Set dynamic current year in footer copyright
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
