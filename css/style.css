@@ -154,3 +154,147 @@ svg {
   display: inline-block;
   vertical-align: middle;
 }
+
+/* =============================================
+   PRE-LOADER
+   ============================================= */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #0f1418;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+#preloader .preloader-line {
+  width: 1px;
+  height: 0;
+  background: linear-gradient(to bottom, transparent, #20b2a6, transparent);
+  opacity: 0;
+}
+
+#preloader .preloader-greeting {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240, 242, 245, 0.5);
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+#preloader .preloader-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  font-style: italic;
+  color: #f0f2f5;
+  opacity: 0;
+  transform: translateY(24px);
+  letter-spacing: -0.02em;
+}
+
+#preloader .preloader-name span {
+  color: #20b2a6;
+  text-shadow: 0 0 40px rgba(32, 178, 166, 0.6);
+}
+
+#preloader .preloader-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #20b2a6;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+#preloader .preloader-bar-container {
+  width: clamp(120px, 30vw, 200px);
+  height: 1px;
+  background: rgba(36, 43, 50, 0.8);
+  border-radius: 999px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#preloader .preloader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, transparent, #20b2a6, rgba(32, 178, 166, 0.4));
+  border-radius: 999px;
+}
+
+/* =============================================
+   GSAP SCROLL ANIMATION — Initial States
+   (Overridden at runtime by GSAP)
+   ============================================= */
+.gsap-reveal {
+  will-change: transform, opacity;
+}
+
+.gsap-hero-child {
+  will-change: transform, opacity;
+}
+
+/* ── Hero elements: initial state is managed exclusively by GSAP at runtime.
+   Do NOT add opacity:0 here — the preloader covers the page during load,
+   so there is no flash-of-content issue. If GSAP fails, content stays visible. ── */
+
+/* ── Preloader h1 resets (browser default h1 margin/padding) ── */
+#preloader .preloader-name {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+}
+
+/* ── About Section ── */
+.about-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-section-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #20b2a6;
+  margin: 0;
+}
+
+.about-section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #f0f2f5;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.about-section-title span {
+  color: #20b2a6;
+}
+
+.about-card {
+  width: 100%;
+}
+
+/* Card Hover Micro-Interactions */
+.glass, .cert-slide {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.glass:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(32, 178, 166, 0.25);
+}
+

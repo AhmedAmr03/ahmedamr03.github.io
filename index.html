@@ -95,6 +95,18 @@
 
 <body class="bg-[#0f1418] text-[#f0f2f5] min-h-screen overflow-x-hidden">
 
+  <!-- ========== PRE-LOADER ========== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-line" id="preloader-line-top"></div>
+    <p class="preloader-greeting">Welcome to my portfolio</p>
+    <h1 class="preloader-name">Ahmed <span>Amr</span></h1>
+    <p class="preloader-tagline">Law Graduate &amp; Lifelong Learner</p>
+    <div class="preloader-bar-container">
+      <div class="preloader-bar" id="preloader-bar"></div>
+    </div>
+    <div class="preloader-line" id="preloader-line-bottom"></div>
+  </div>
+
   <!-- Header / Navbar -->
   <header id="navbar-header" class="fixed top-0 left-0 right-0 py-5 transition-all duration-500 z-50 bg-transparent">
     <nav class="container mx-auto px-6 flex items-center justify-between">
@@ -186,7 +198,7 @@
             <!-- Headline -->
             <div class="space-y-4">
               <span class="font-serif italic font-normal text-white text-2xl">hi, I am</span>
-              <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold font-serif italic leading-tight animate-fade-in animation-delay-100">
                 Ahmed <span class="text-primary glow-text">Amr</span>
               </h1>
             </div>
@@ -360,14 +372,16 @@
     <!-- About Section (Centered & Modified) -->
     <section id="about" class="py-32 relative overflow-hidden">
       <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl mx-auto text-center space-y-8">
+        <div class="max-w-4xl mx-auto text-center about-content-wrapper">
 
-          <div class="animate-fade-in">
-            <span class="text-secondary-foreground text-sm font-medium tracking-wider uppercase">About Me</span>
-          </div>
+          <!-- Section Label -->
+          <p class="about-section-label text-secondary-foreground text-sm font-medium tracking-wider uppercase">Who I Am</p>
 
-          <div
-            class="glass rounded-3xl p-8 md:p-12 glow-border animate-fade-in animation-delay-300 space-y-6 max-w-3xl mx-auto">
+          <!-- Section Title -->
+          <h2 class="about-section-title text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">About <span>Me</span></h2>
+
+          <!-- Content Card -->
+          <div class="glass rounded-3xl p-8 md:p-12 glow-border about-card space-y-6 max-w-3xl mx-auto animate-fade-in animation-delay-300">
             <p class="text-lg md:text-xl leading-relaxed text-foreground/90 text-center">
               My background in law and active participation in competitions and initiatives, including chess awards and
               community projects, further strengthen my critical thinking, strategic planning, and commitment to
@@ -375,7 +389,7 @@
             </p>
             <p class="text-lg md:text-xl leading-relaxed text-foreground/90 text-center">
               I have enhanced my technical skills with multiple certifications and projects, including AI tools, Web
-              Development (HTML & CSS), Business English, Digital Marketing fundamentals, and structured training from
+              Development (HTML &amp; CSS), Business English, Digital Marketing fundamentals, and structured training from
               recognized institutions such as ALX, Creativa and ITIDA.
             </p>
           </div>
@@ -1256,6 +1270,14 @@
 
   <!-- Script setup -->
   <script src="js/main.js"></script>
+
+  <!-- GSAP Core + ScrollTrigger (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- GSAP Animations -->
+  <script src="js/gsap-animations.js"></script>
+
   <script>
     // Set dynamic current year in footer copyright
     document.getElementById("footer-year").textContent = new Date().getFullYear();
