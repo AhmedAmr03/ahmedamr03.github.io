@@ -5,10 +5,9 @@
   "scripts": {
     "build:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.min.css --minify",
     "build:js": "terser js/main.js -o js/main.min.js -c -m && terser js/gsap-animations.js -o js/gsap-animations.min.js -c -m",
-    "build": "npm run build:css && npm run build:js"
+    "build": "echo 'Static site ready'"
   },
-  "devDependencies": {
-    "sharp": "^0.35.3",
+  "dependencies": {
     "tailwindcss": "^3.4.17",
     "terser": "^5.50.0"
   }
