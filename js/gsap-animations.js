@@ -33,12 +33,11 @@
 
     gsap.fromTo(
       els,
-      Object.assign({ opacity: 0, y: 48, filter: "blur(6px)" }, fromVars),
+      Object.assign({ opacity: 0, y: 48 }, fromVars),
       Object.assign(
         {
           opacity: 1,
           y: 0,
-          filter: "blur(0px)",
           duration: 0.75,
           ease: "power3.out",
           stagger: 0.12,
@@ -281,8 +280,8 @@
     const heroRight = document.querySelector(".relative.animate-fade-in.animation-delay-300");
 
     // Set initial hidden state (suppress CSS animation-delay conflicts)
-    gsap.set(heroLeftChildren, { opacity: 0, y: 36, filter: "blur(8px)" });
-    if (heroRight) gsap.set(heroRight, { opacity: 0, x: 40, filter: "blur(8px)" });
+    gsap.set(heroLeftChildren, { opacity: 0, y: 36 });
+    if (heroRight) gsap.set(heroRight, { opacity: 0, x: 40 });
 
     const tl = gsap.timeline({ delay: 0.1 });
 
@@ -290,7 +289,6 @@
       tl.to(heroLeftChildren, {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
         duration: 0.75,
         ease: "power3.out",
         stagger: 0.14,
@@ -303,7 +301,6 @@
         {
           opacity: 1,
           x: 0,
-          filter: "blur(0px)",
           duration: 0.85,
           ease: "expo.out",
         },
@@ -350,12 +347,11 @@
       const aboutEls   = [aboutLabel, aboutTitle, aboutCard].filter(Boolean);
 
       if (aboutEls.length) {
-        gsap.set(aboutEls, { opacity: 0, y: 44, filter: "blur(8px)" });
+        gsap.set(aboutEls, { opacity: 0, y: 44 });
 
         gsap.to(aboutEls, {
           opacity: 1,
           y: 0,
-          filter: "blur(0px)",
           duration: 0.85,
           ease: "expo.out",
           stagger: 0.22,
@@ -383,9 +379,9 @@
       // 1. Section heading
       const eduH2 = educationSection.querySelector("h2");
       if (eduH2) {
-        gsap.set(eduH2, { opacity: 0, y: 36, filter: "blur(5px)" });
+        gsap.set(eduH2, { opacity: 0, y: 36 });
         gsap.to(eduH2, {
-          opacity: 1, y: 0, filter: "blur(0px)",
+          opacity: 1, y: 0,
           duration: 0.7, ease: "power3.out",
           scrollTrigger: {
             trigger: educationSection,
@@ -417,9 +413,9 @@
       eduItems.forEach((item, i) => {
         // Even index → slide from left; odd → from right
         const xFrom = i % 2 === 0 ? -70 : 70;
-        gsap.set(item, { opacity: 0, x: xFrom, filter: "blur(6px)" });
+        gsap.set(item, { opacity: 0, x: xFrom });
         gsap.to(item, {
-          opacity: 1, x: 0, filter: "blur(0px)",
+          opacity: 1, x: 0,
           duration: 0.8, ease: "expo.out",
           scrollTrigger: {
             trigger: item,
@@ -482,9 +478,9 @@
       const awardsHeader = awardsSection.querySelector(".text-center");
       if (awardsHeader) {
         const headerKids = Array.from(awardsHeader.children);
-        gsap.set(headerKids, { opacity: 0, y: 30, filter: "blur(4px)" });
+        gsap.set(headerKids, { opacity: 0, y: 30 });
         gsap.to(headerKids, {
-          opacity: 1, y: 0, filter: "blur(0px)",
+          opacity: 1, y: 0,
           duration: 0.65, ease: "power3.out",
           stagger: 0.16,
           scrollTrigger: {
@@ -498,9 +494,9 @@
       // Award card CONTAINERS — animate the whole div
       const awardCards = Array.from(awardsSection.querySelectorAll(".grid > div"));
       if (awardCards.length) {
-        gsap.set(awardCards, { opacity: 0, y: 65, scale: 0.96, filter: "blur(7px)" });
+        gsap.set(awardCards, { opacity: 0, y: 65, scale: 0.96 });
         gsap.to(awardCards, {
-          opacity: 1, y: 0, scale: 1, filter: "blur(0px)",
+          opacity: 1, y: 0, scale: 1,
           duration: 0.85, ease: "expo.out",
           stagger: 0.2,
           scrollTrigger: {
@@ -520,9 +516,9 @@
       const contactHeader = contactSection.querySelector(".text-center");
       if (contactHeader) {
         const headerKids = Array.from(contactHeader.children);
-        gsap.set(headerKids, { opacity: 0, y: 28, filter: "blur(4px)" });
+        gsap.set(headerKids, { opacity: 0, y: 28 });
         gsap.to(headerKids, {
-          opacity: 1, y: 0, filter: "blur(0px)",
+          opacity: 1, y: 0,
           duration: 0.6, ease: "power3.out",
           stagger: 0.15,
           scrollTrigger: {
@@ -537,9 +533,9 @@
         contactSection.querySelectorAll(".grid.lg\\:grid-cols-2 > div")
       );
       if (contactPanels.length) {
-        gsap.set(contactPanels, { opacity: 0, y: 55, filter: "blur(6px)" });
+        gsap.set(contactPanels, { opacity: 0, y: 55 });
         gsap.to(contactPanels, {
-          opacity: 1, y: 0, filter: "blur(0px)",
+          opacity: 1, y: 0,
           duration: 0.85, ease: "power3.out",
           stagger: 0.2,
           scrollTrigger: {

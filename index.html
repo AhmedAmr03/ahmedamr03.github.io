@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="icon" type="image/webp" href="images/icon.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary Meta Tags -->
@@ -26,7 +26,7 @@
   <meta property="og:title" content="Ahmed Amr | Law Graduate &amp; Portfolio" />
   <meta property="og:description"
     content="Ahmed Amr (ahmedamr03) — Law Graduate. Explore my professional portfolio including certificates, academic achievements, and awards." />
-  <meta property="og:image" content="https://ahmedamr.pro/images/profile-photo.png" />
+  <meta property="og:image" content="https://ahmedamr.pro/images/profile-photo.webp" />
   <meta property="og:image:alt" content="Ahmed Amr Profile Photo" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Ahmed Amr Portfolio" />
@@ -37,7 +37,7 @@
   <meta name="twitter:title" content="Ahmed Amr | Law Graduate &amp; Portfolio" />
   <meta name="twitter:description"
     content="Ahmed Amr (ahmedamr03) — Law Graduate. Explore my professional portfolio including certificates, academic achievements, and awards." />
-  <meta name="twitter:image" content="https://ahmedamr.pro/images/profile-photo.png" />
+  <meta name="twitter:image" content="https://ahmedamr.pro/images/profile-photo.webp" />
 
   <!-- JSON-LD Structured Data: Person Schema -->
   <script type="application/ld+json">
@@ -47,7 +47,7 @@
     "name": "Ahmed Amr",
     "alternateName": "ahmedamr03",
     "url": "https://ahmedamr.pro",
-    "image": "https://ahmedamr.pro/images/profile-photo.png",
+    "image": "https://ahmedamr.pro/images/profile-photo.webp",
     "sameAs": [
       "https://www.linkedin.com/in/ahmedamr03/",
       "https://github.com/AhmedAmr03/"
@@ -58,34 +58,13 @@
   }
   </script>
 
-  <!-- Tailwind CSS Local -->
-  <script src="js/tailwind.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            background: '#0f1418',
-            foreground: '#f0f2f5',
-            card: '#141a1f',
-            primary: '#20b2a6',
-            'primary-foreground': '#ffffff',
-            secondary: '#1f2830',
-            'secondary-foreground': '#20b2a6',
-            muted: '#252e37',
-            'muted-foreground': '#7a8491',
-            border: '#242b32',
-            highlight: '#f5a623',
-            surface: '#1a2329',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Preconnect to external font and CDN origins for fast loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Pre-compiled Minified Tailwind CSS -->
+  <link rel="stylesheet" href="css/tailwind.min.css" />
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
@@ -139,7 +118,7 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-foreground cursor-pointer focus:outline-none">
+      <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-foreground cursor-pointer focus:outline-none">
         <!-- Menu Icon -->
         <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -175,7 +154,7 @@
     <section class="relative min-h-screen flex items-center overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0">
-        <img src="images/hero-bg.jpg" alt="Hero image" class="w-full h-full object-cover opacity-40" />
+        <img src="images/hero-bg.webp" alt="Hero background" width="1920" height="1080" fetchpriority="high" decoding="async" class="w-full h-full object-cover opacity-40" />
         <div class="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background"></div>
       </div>
 
@@ -282,7 +261,7 @@
                 class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse">
               </div>
               <div class="relative glass rounded-3xl p-2 glow-border">
-                <img src="images/profile-photo.png" alt="Ahmed Amr"
+                <img src="images/profile-photo.webp" alt="Ahmed Amr" width="757" height="946" loading="lazy" decoding="async"
                   class="w-full aspect-[4/5] object-cover rounded-2xl" />
 
                 <!-- Floating Badge Bottom Right -->
@@ -381,7 +360,8 @@
 
           <!-- Section Title -->
           <h2 class="about-section-title text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">About
-            <span>Me</span></h2>
+            <span>Me</span>
+          </h2>
 
           <!-- Content Card -->
           <div
@@ -545,14 +525,14 @@
         <div id="panel-technical" class="cert-panel">
           <div class="relative">
             <button onclick="slidePanel('technical', -1)" aria-label="Previous"
-              class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
             <button onclick="slidePanel('technical', 1)" aria-label="Next"
-              class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -569,7 +549,7 @@
                   <div>
                     <div
                       class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
-                      <img src="certificates/AI Career Essentials.png" alt="AI Career Essentials (AICE)"
+                      <img src="certificates/AI Career Essentials.webp" alt="AI Career Essentials (AICE)" width="800" height="450" loading="lazy" decoding="async"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
                       <div
@@ -582,7 +562,7 @@
                           <line x1="16" y1="17" x2="8" y2="17"></line>
                         </svg>
                         <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
-                            class="text-primary">certificates/AI Career Essentials.png</code></span>
+                            class="text-primary">certificates/AI Career Essentials.webp</code></span>
                       </div>
                     </div>
                     <span
@@ -604,7 +584,7 @@
                   <div>
                     <div
                       class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
-                      <img src="certificates/THE WEB DEVELOPMENT.PNG" alt="Web Development Certificate"
+                      <img src="certificates/THE WEB DEVELOPMENT.webp" alt="Web Development Certificate" width="800" height="450" loading="lazy" decoding="async"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
                       <div
@@ -617,7 +597,7 @@
                           <line x1="16" y1="17" x2="8" y2="17"></line>
                         </svg>
                         <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
-                            class="text-primary">certificates/The Web Development.png</code></span>
+                            class="text-primary">certificates/The Web Development.webp</code></span>
                       </div>
                     </div>
                     <span
@@ -639,7 +619,7 @@
                   <div>
                     <div
                       class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
-                      <img src="certificates/Data Analysis.PNG" alt="Data Analysis"
+                      <img src="certificates/Data Analysis.webp" alt="Data Analysis" width="800" height="450" loading="lazy" decoding="async"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
                       <div
@@ -652,7 +632,7 @@
                           <line x1="16" y1="17" x2="8" y2="17"></line>
                         </svg>
                         <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
-                            class="text-primary">certificates/Data Analysis.png</code></span>
+                            class="text-primary">certificates/Data Analysis.webp</code></span>
                       </div>
                     </div>
                     <span
@@ -673,7 +653,7 @@
                   <div>
                     <div
                       class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
-                      <img src="certificates/ICDL Base.PNG" alt="ICDL Certificate"
+                      <img src="certificates/ICDL Base.webp" alt="ICDL Certificate" width="800" height="450" loading="lazy" decoding="async"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
                       <div
@@ -686,7 +666,7 @@
                           <line x1="16" y1="17" x2="8" y2="17"></line>
                         </svg>
                         <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
-                            class="text-primary">certificates/ICDL Base.png</code></span>
+                            class="text-primary">certificates/ICDL Base.webp</code></span>
                       </div>
                     </div>
                     <span
@@ -710,14 +690,14 @@
         <div id="panel-soft" class="cert-panel hidden">
           <div class="relative">
             <button onclick="slidePanel('soft', -1)" aria-label="Previous"
-              class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
             <button onclick="slidePanel('soft', 1)" aria-label="Next"
-              class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
+              class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full glass border border-primary/30 hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 shadow-lg shadow-primary/10">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="#20b2a6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -733,7 +713,7 @@
                   <div>
                     <div
                       class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
-                      <img src="certificates/Time Management.PNG" alt="Time Management"
+                      <img src="certificates/Time Management.webp" alt="Time Management" width="800" height="450" loading="lazy" decoding="async"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
                       <div
@@ -746,7 +726,7 @@
                           <line x1="16" y1="17" x2="8" y2="17"></line>
                         </svg>
                         <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
-                            class="text-primary">certificates/Time Management.png</code></span>
+                            class="text-primary">certificates/Time Management.webp</code></span>
                       </div>
                     </div>
                     <span
@@ -764,8 +744,8 @@
                   <div>
                     <div
                       class="relative overflow-hidden aspect-video mb-4 rounded-xl border border-border/50 bg-card flex items-center justify-center">
-                      <img src="certificates/Business English For Freelancing.PNG"
-                        alt="Business English For Freelancing"
+                      <img src="certificates/Business English For Freelancing.webp"
+                        alt="Business English For Freelancing" width="800" height="450" loading="lazy" decoding="async"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
                       <div
@@ -778,7 +758,7 @@
                           <line x1="16" y1="17" x2="8" y2="17"></line>
                         </svg>
                         <span class="text-[10px] text-muted-foreground font-medium">Place image at:<br><code
-                            class="text-primary">certificates/Business English For Freelancing.png</code></span>
+                            class="text-primary">certificates/Business English For Freelancing.webp</code></span>
                       </div>
                     </div>
                     <span
@@ -869,8 +849,12 @@
           }
 
           function styleBtn(dot, active) {
-            dot.style.cssText = 'display:inline-block;border:none;padding:0;margin:0;cursor:pointer;border-radius:999px;transition:all 0.3s;'
-              + (active ? 'width:24px;height:8px;background:#20b2a6;' : 'width:8px;height:8px;background:rgba(122,132,145,0.4);');
+            dot.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:12px 4px;border:none;background:transparent;cursor:pointer;';
+            var inner = dot.querySelector('.dot-inner') || document.createElement('span');
+            inner.className = 'dot-inner';
+            inner.style.cssText = 'display:block;border-radius:999px;transition:all 0.3s;'
+              + (active ? 'width:24px;height:8px;background:#20b2a6;' : 'width:8px;height:8px;background:rgba(160,174,192,0.5);');
+            if (!dot.contains(inner)) dot.appendChild(inner);
           }
 
           function buildDots() {
@@ -966,7 +950,7 @@
               <!-- Chess Certificate Image -->
               <div
                 class="relative overflow-hidden aspect-video mb-6 rounded-2xl border border-border/50 bg-card flex items-center justify-center">
-                <img src="awards/1st place in Chess.jpg" alt="1st place in Chess at Sohag University"
+                <img src="awards/1st place in Chess.webp" alt="1st place in Chess at Sohag University" width="800" height="450" loading="lazy" decoding="async"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
                 <!-- Fallback placeholder if image doesn't exist -->
@@ -998,7 +982,7 @@
               <!-- Community Project Certificate Image -->
               <div
                 class="relative overflow-hidden aspect-video mb-6 rounded-2xl border border-border/50 bg-card flex items-center justify-center">
-                <img src="awards/2nd place in Chess.jpg" alt="2nd place in Chess"
+                <img src="awards/2nd place in Chess.webp" alt="2nd place in Chess" width="800" height="450" loading="lazy" decoding="async"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
                 <!-- Fallback placeholder if image doesn't exist -->
@@ -1274,14 +1258,14 @@
   </div>
 
   <!-- Script setup -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 
   <!-- GSAP Core + ScrollTrigger (CDN) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
   <!-- GSAP Animations -->
-  <script src="js/gsap-animations.js"></script>
+  <script src="js/gsap-animations.js" defer></script>
 
   <script>
     // Set dynamic current year in footer copyright

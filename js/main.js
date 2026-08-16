@@ -15,19 +15,33 @@ function initNavbarScroll() {
     const header = document.getElementById("navbar-header");
     if (!header) return;
 
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            header.classList.remove("bg-transparent", "py-5");
-            header.classList.add("glass-strong", "py-3");
-        } else {
-            header.classList.remove("glass-strong", "py-3");
-            header.classList.add("bg-transparent", "py-5");
+    let isScrolled = false;
+    let ticking = false;
+
+    const updateNavbar = () => {
+        const shouldBeScrolled = window.scrollY > 50;
+        if (shouldBeScrolled !== isScrolled) {
+            isScrolled = shouldBeScrolled;
+            if (isScrolled) {
+                header.classList.remove("bg-transparent", "py-5");
+                header.classList.add("glass-strong", "py-3");
+            } else {
+                header.classList.remove("glass-strong", "py-3");
+                header.classList.add("bg-transparent", "py-5");
+            }
         }
+        ticking = false;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }, { passive: true });
+
     // Initial check in case page starts scrolled
-    handleScroll();
+    updateNavbar();
 }
 
 /**
