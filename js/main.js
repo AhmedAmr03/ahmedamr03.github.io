@@ -57,7 +57,7 @@ function initMobileMenu() {
 
     menuBtn.addEventListener("click", () => {
         const isOpen = mobileMenu.classList.contains("hidden");
-        
+
         if (isOpen) {
             mobileMenu.classList.remove("hidden");
             mobileMenu.classList.add("flex");
@@ -94,20 +94,20 @@ function generateFloatingDots() {
     for (let i = 0; i < numberOfDots; i++) {
         const dot = document.createElement("div");
         dot.className = "absolute rounded-full opacity-60 pointer-events-none";
-        
+
         // Styling matching Hero.jsx
         dot.style.width = "6px";
         dot.style.height = "6px";
         dot.style.backgroundColor = "#20B2A6";
         dot.style.left = `${Math.random() * 100}%`;
         dot.style.top = `${Math.random() * 100}%`;
-        
+
         const duration = 15 + Math.random() * 20;
         const delay = Math.random() * 5;
-        
+
         dot.style.animation = `slowDrift ${duration}s ease-in-out infinite`;
         dot.style.animationDelay = `${delay}s`;
-        
+
         container.appendChild(dot);
     }
 }
@@ -151,12 +151,12 @@ function initContactForm() {
             if (window.location.protocol === 'file:') {
                 console.log("Running locally via file:// protocol. Simulating email submission.");
                 await new Promise(resolve => setTimeout(resolve, 1500));
-                
+
                 statusDiv.classList.remove("hidden");
                 statusDiv.classList.add("bg-green-500/10", "border-green-500/20", "text-green-400");
                 statusIconSuccess.classList.remove("hidden");
                 statusText.textContent = "Demo Submit: Message sent successfully! (Deploy to Vercel and configure env variables to receive real emails).";
-                
+
                 form.reset();
                 return;
             }
@@ -206,23 +206,23 @@ function initContactForm() {
 function initLightbox() {
     const lightbox = document.getElementById("image-lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
-    
+
     if (!lightbox || !lightboxImg) return;
 
     // Select all certificate and award images
     const images = document.querySelectorAll(".cert-slide img, #awards img");
-    
+
     images.forEach(img => {
         // Add cursor pointer indicating it is clickable
         img.classList.add("cursor-pointer");
-        
+
         img.addEventListener("click", () => {
             // Do not click if the image is hidden (e.g. onerror triggered and fell back to text)
             if (img.style.display === "none") return;
-            
+
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt || "Enlarged view";
-            
+
             lightbox.classList.remove("hidden");
             // Trigger animation transition
             setTimeout(() => {
